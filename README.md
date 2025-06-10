@@ -117,7 +117,7 @@ git clone https://github.com/thanhdinhbao/MIT-Project.git
 
 ### Manual Deployment 📦
 
-## ✅ ① Create a Python Virtual Environment
+## ① Create a Python Virtual Environment
 
 It is recommended to create a Python virtual environment to avoid dependency conflicts.
 
@@ -140,14 +140,6 @@ pip install -r requirements.txt
 
 ```
 
-#### ② Access the Web Interface
-
-Open your browser and visit http://0.0.0.0:8501
-
-#### ③ Access the API Interface
-
-Open your browser and visit http://0.0.0.0:8080/docs Or http://0.0.0.0:8080/redoc
-
 ###### Windows
 
 ```bat
@@ -163,6 +155,14 @@ sh webui.sh
 ```
 
 After launching, the browser will open automatically
+
+#### ② Access the Web Interface
+
+Open your browser and visit http://0.0.0.0:8501
+
+#### ③ Access the API Interface
+
+Open your browser and visit http://0.0.0.0:8080/docs Or http://0.0.0.0:8080/redoc
 
 #### ④ Launch the API Service 🚀
 
