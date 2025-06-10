@@ -95,8 +95,6 @@ materials, video subtitles, and video background music before synthesizing a hig
 - Windows 10 or MacOS 11.0, and their later versions
 
 ## Installation & Deployment 📥
-
-- Try to avoid using **Chinese paths** to prevent unpredictable issues
 - Ensure your **network** is stable, meaning you can access foreign websites normally
 
 #### ① Clone the Project
@@ -116,22 +114,31 @@ git clone https://github.com/thanhdinhbao/MIT-Project.git
 - To use `GPT-4.0` or `GPT-3.5`, you need an `API Key` from `OpenAI`. If you don't have one, you can set `llm_provider`
   to `g4f` (a free-to-use GPT library https://github.com/xtekky/gpt4free)
 
-### Docker Deployment 🐳
 
-#### ① Launch the Docker Container
+### Manual Deployment 📦
 
-If you haven't installed Docker, please install it first https://www.docker.com/products/docker-desktop/
-If you are using a Windows system, please refer to Microsoft's documentation:
+## ✅ ① Create a Python Virtual Environment
 
-1. https://learn.microsoft.com/en-us/windows/wsl/install
-2. https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers
+It is recommended to create a Python virtual environment to avoid dependency conflicts.
 
-```shell
+```bash
+# Clone the project
+git clone https://github.com/thanhdinhbao/MIT-Project.git
 cd MIT-Project
-docker-compose up
-```
 
-> Note：The latest version of docker will automatically install docker compose in the form of a plug-in, and the start command is adjusted to `docker compose up `
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+```
 
 #### ② Access the Web Interface
 
@@ -140,46 +147,6 @@ Open your browser and visit http://0.0.0.0:8501
 #### ③ Access the API Interface
 
 Open your browser and visit http://0.0.0.0:8080/docs Or http://0.0.0.0:8080/redoc
-
-### Manual Deployment 📦
-
-#### ① Create a Python Virtual Environment
-
-It is recommended to create a Python virtual environment
-using [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
-
-```shell
-git clone https://github.com/thanhdinhbao/MIT-Project.git
-cd MIT-Project
-conda create -n MIT-Project python=3.11
-conda activate MIT-Project
-pip install -r requirements.txt
-```
-
-#### ② Install ImageMagick
-
-###### Windows:
-
-- Download https://imagemagick.org/archive/binaries/ImageMagick-7.1.1-29-Q16-x64-static.exe
-- Install the downloaded ImageMagick, **do not change the installation path**
-- Modify the `config.toml` configuration file, set `imagemagick_path` to your actual installation path (if you didn't
-  change the path during installation, just uncomment it)
-
-###### MacOS:
-
-```shell
-brew install imagemagick
-````
-
-###### Ubuntu
-
-```shell
-sudo apt-get install imagemagick
-```
-
-#### ③ Launch the Web Interface 🌐
-
-Note that you need to execute the following commands in the `root directory` of the MIT-Project project
 
 ###### Windows
 
@@ -296,8 +263,4 @@ actual installation path.
 ffmpeg_path = "C:\\Users\\harry\\Downloads\\ffmpeg.exe"
 ```
 
-## Feedback & Suggestions 📢
-
-- You can submit an [issue](https://github.com/thanhdinhbao/MIT-Project/issues) or
-  a [pull request](https://github.com/thanhdinhbao/MIT-Project/pulls).
 
