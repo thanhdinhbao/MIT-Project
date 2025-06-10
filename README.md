@@ -2,7 +2,7 @@
 <h1 align="center">MIT-Project 💸</h1>
 
 <div align="center">
-  <a href="https://trendshift.io/repositories/8731" target="_blank"><img src="https://trendshift.io/api/badge/repositories/8731" alt="harry0703%2FMoneyPrinterTurbo | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+  <a href="https://trendshift.io/repositories/8731" target="_blank"><img src="https://trendshift.io/api/badge/repositories/8731" alt="harry0703%2FMIT-Project | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </div>
 
 Simply provide a <b>topic</b> or <b>keyword</b> for a video, and it will automatically generate the video copy, video
@@ -127,7 +127,7 @@ If you are using a Windows system, please refer to Microsoft's documentation:
 2. https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers
 
 ```shell
-cd MoneyPrinterTurbo
+cd MIT-Project
 docker-compose up
 ```
 
@@ -150,9 +150,9 @@ using [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index
 
 ```shell
 git clone https://github.com/thanhdinhbao/MIT-Project.git
-cd MoneyPrinterTurbo
-conda create -n MoneyPrinterTurbo python=3.11
-conda activate MoneyPrinterTurbo
+cd MIT-Project
+conda create -n MIT-Project python=3.11
+conda activate MIT-Project
 pip install -r requirements.txt
 ```
 
@@ -177,27 +177,21 @@ brew install imagemagick
 sudo apt-get install imagemagick
 ```
 
-###### CentOS
-
-```shell
-sudo yum install ImageMagick
-```
-
 #### ③ Launch the Web Interface 🌐
 
-Note that you need to execute the following commands in the `root directory` of the MoneyPrinterTurbo project
+Note that you need to execute the following commands in the `root directory` of the MIT-Project project
 
 ###### Windows
 
 ```bat
-conda activate MoneyPrinterTurbo
+conda activate MIT-Project
 webui.bat
 ```
 
 ###### MacOS or Linux
 
 ```shell
-conda activate MoneyPrinterTurbo
+conda activate MIT-Project
 sh webui.sh
 ```
 
@@ -237,12 +231,12 @@ satisfactory.
 - Please ensure a good internet connectivity
 - `whisper` model can be downloaded from HuggingFace: https://huggingface.co/openai/whisper-large-v3/tree/main
 
-After downloading the model to local machine, copy the whole folder and put it into the following path: `.\MoneyPrinterTurbo\models`
+After downloading the model to local machine, copy the whole folder and put it into the following path: `.\MIT-Project\models`
 
-This is what the final path should look like: `.\MoneyPrinterTurbo\models\whisper-large-v3`
+This is what the final path should look like: `.\MIT-Project\models\whisper-large-v3`
 
 ```
-MoneyPrinterTurbo  
+MIT-Project  
   ├─models
   │   └─whisper-large-v3
   │          config.json
@@ -302,52 +296,8 @@ actual installation path.
 ffmpeg_path = "C:\\Users\\harry\\Downloads\\ffmpeg.exe"
 ```
 
-### ❓Error generating audio or downloading videos
-
-[issue 56](https://github.com/thanhdinhbao/MIT-Project/issues/56)
-
-```
-failed to generate audio, maybe the network is not available. 
-if you are in China, please use a VPN.
-```
-
-[issue 44](https://github.com/thanhdinhbao/MIT-Project/issues/44)
-
-```
-failed to download videos, maybe the network is not available. 
-if you are in China, please use a VPN.
-```
-
-This is likely due to network issues preventing access to foreign services. Please use a VPN to resolve this.
-
-### ❓ImageMagick is not installed on your computer
-
-[issue 33](https://github.com/thanhdinhbao/MIT-Project/issues/33)
-
-1. Follow the `example configuration` provided `download address` to
-   install https://imagemagick.org/archive/binaries/ImageMagick-7.1.1-30-Q16-x64-static.exe, using the static library
-2. Do not install in a path with Chinese characters to avoid unpredictable issues
-
-[issue 54](https://github.com/thanhdinhbao/MIT-Project/issues/54#issuecomment-2017842022)
-
-For Linux systems, you can manually install it, refer to https://cn.linux-console.net/?p=16978
-
-Thanks to [@wangwenqiao666](https://github.com/wangwenqiao666) for their research and exploration
-
 ## Feedback & Suggestions 📢
 
 - You can submit an [issue](https://github.com/thanhdinhbao/MIT-Project/issues) or
   a [pull request](https://github.com/thanhdinhbao/MIT-Project/pulls).
 
-## Reference Projects 📚
-
-This project is based on https://github.com/FujiwaraChoki/MoneyPrinter and has been refactored with a lot of
-optimizations and added functionalities. Thanks to the original author for their spirit of open source.
-
-## License 📝
-
-Click to view the [`LICENSE`](LICENSE) file
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=thanhdinhbao/MIT-Project&type=Date)](https://star-history.com/#thanhdinhbao/MIT-Project&Date)
