@@ -38,8 +38,6 @@ materials, video subtitles, and video background music before synthesizing a hig
 - [x] Supports integration with various models such as **OpenAI**, **moonshot**, **Azure**, **gpt4free**, **one-api**,
   **qianwen**, **Google Gemini**, **Ollama** and more
 
-❓[How to Use the Free OpenAI GPT-3.5 Model?](https://github.com/thanhdinhbao/MIT-Project/blob/main/README-en.md#common-questions-)
-
 ### Future Plans 📅
 
 - [ ] Introduce support for GPT-SoVITS dubbing
@@ -173,10 +171,6 @@ python main.py
 After launching, you can view the `API documentation` at http://127.0.0.1:8080/docs and directly test the interface
 online for a quick experience.
 
-## Voice Synthesis 🗣
-
-A list of all supported voices can be viewed here: [Voice List](./docs/voice-list.txt)
-
 ## Subtitle Generation 📜
 
 Currently, there are 2 ways to generate subtitles:
@@ -260,7 +254,7 @@ actual installation path.
 ```toml
 [app]
 # Please set according to your actual path, note that Windows path separators are \\
-ffmpeg_path = "C:\\Users\\harry\\Downloads\\ffmpeg.exe"
+ffmpeg_path = "C:\\Users\\thanh\\Downloads\\ffmpeg.exe"
 ```
 
 
