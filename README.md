@@ -117,7 +117,7 @@ git clone https://github.com/thanhdinhbao/MIT-Project.git
 
 ### Manual Deployment 📦
 
-## ① Create a Python Virtual Environment
+#### ① Create a Python Virtual Environment
 
 It is recommended to create a Python virtual environment to avoid dependency conflicts.
 
