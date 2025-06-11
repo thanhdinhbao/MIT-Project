@@ -61,8 +61,8 @@ hỗ trợ `phác thảo phụ đề`
 </thead>
 <tbody>
 <tr>
-<td align="center"><video src="https://github.com/thanhdinhbao/MIT-Project/assets/4928832/a84d33d5-27a2-4aba-8fd0-9fb2bd91c6a6"></video></td>
-<td align="center"><video src="https://github.com/thanhdinhbao/MIT-Project/assets/4928832/112c9564-d52b-4472-99ad-970b75f66476"></video></td>
+<td align="center"><video src="https://github.com/thanhdinhbao/MIT-Project/blob/main/docs/demo1.mp4"></video></td>
+<td align="center"><video src="hhttps://github.com/thanhdinhbao/MIT-Project/blob/main/docs/demo2.mp4"></video></td>
 </tr>
 </tbody>
 </table>
