@@ -1,12 +1,9 @@
 <div align="center">
 <h1 align="center">MIT-Project 💸</h1>
 
-<div align="center">
-  <a href="https://trendshift.io/repositories/8731" target="_blank"><img src="https://trendshift.io/api/badge/repositories/8731" alt="harry0703%2FMIT-Project | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-</div>
 
-Simply provide a <b>topic</b> or <b>keyword</b> for a video, and it will automatically generate the video copy, video
-materials, video subtitles, and video background music before synthesizing a high-definition short video.
+Chỉ cần cung cấp <b>chủ đề</b> hoặc <b>từ khóa</b> cho video và công cụ sẽ tự động tạo bản sao video,
+tài liệu video, phụ đề video và nhạc nền video trước khi tổng hợp thành video ngắn có độ phân giải cao.
 
 ### WebUI
 
@@ -22,38 +19,38 @@ materials, video subtitles, and video background music before synthesizing a hig
 
 - [x] Complete **MVC architecture**, **clearly structured** code, easy to maintain, supports both `API`
   and `Web interface`
-- [x] Supports **AI-generated** video copy, as well as **customized copy**
-- [x] Supports various **high-definition video** sizes
-    - [x] Portrait 9:16, `1080x1920`
-    - [x] Landscape 16:9, `1920x1080`
-- [x] Supports **batch video generation**, allowing the creation of multiple videos at once, then selecting the most
-  satisfactory one
-- [x] Supports setting the **duration of video clips**, facilitating adjustments to material switching frequency
-- [x] Supports video copy in both **Chinese** and **English**
-- [x] Supports **multiple voice** synthesis
-- [x] Supports **subtitle generation**, with adjustable `font`, `position`, `color`, `size`, and also
-  supports `subtitle outlining`
-- [x] Supports **background music**, either random or specified music files, with adjustable `background music volume`
-- [x] Video material sources are **high-definition** and **royalty-free**
-- [x] Supports integration with various models such as **OpenAI**, **moonshot**, **Azure**, **gpt4free**, **one-api**,
-  **qianwen**, **Google Gemini**, **Ollama** and more
+- [x] Hỗ trợ bản sao video **do AI tạo** cũng như bản sao **tùy chỉnh**
+- [x] Hỗ trợ nhiều kích cỡ **video độ nét cao**
+    - [x] Chân dung 9:16, `1080x1920`
+    - [x] Phong cảnh 16:9, `1920x1080`
+- [x] Hỗ trợ **tạo video hàng loạt**, cho phép tạo nhiều video cùng lúc, sau đó chọn video
+ưng ý nhất
+- [x] Hỗ trợ thiết lập **thời lượng của các đoạn video**, tạo điều kiện thuận lợi cho việc điều chỉnh tần suất chuyển đổi vật liệu
+- [x] Hỗ trợ sao chép video bằng cả **Tiếng Việt** và **Tiếng Anh**
+- [x] Hỗ trợ tổng hợp **nhiều giọng nói**
+- [x] Hỗ trợ **tạo phụ đề**, với `font`, `position`, `color`, `size` có thể điều chỉnh và cũng
+hỗ trợ `phác thảo phụ đề`
+- [x] Hỗ trợ **nhạc nền**, có thể là tệp nhạc ngẫu nhiên hoặc được chỉ định, với `âm lượng nhạc nền` có thể điều chỉnh
+- [x] Nguồn tài liệu video có **độ phân giải cao** và **miễn phí bản quyền**
+- [x] Hỗ trợ tích hợp với nhiều mô hình khác nhau như **OpenAI**, **moonshot**, **Azure**, **gpt4free**, **one-api**,
+**qianwen**, **Google Gemini**, **Ollama** và nhiều mô hình khác
 
-### Future Plans 📅
+### Dự định tương lai 📅
 
-- [ ] Introduce support for GPT-SoVITS dubbing
-- [ ] Enhance voice synthesis with large models for a more natural and emotionally resonant voice output
-- [ ] Incorporate video transition effects to ensure a smoother viewing experience
-- [ ] Improve the relevance of video content
-- [ ] Add options for video length: short, medium, long
-- [ ] Package the application into a one-click launch bundle for Windows and macOS for ease of use
-- [ ] Enable the use of custom materials
-- [ ] Offer voiceover and background music options with real-time preview
-- [ ] Support a wider range of voice synthesis providers, such as OpenAI TTS, Azure TTS
-- [ ] Automate the upload process to the YouTube platform
+- [ ] Giới thiệu hỗ trợ cho lồng tiếng GPT-SoVITS
+- [ ] Nâng cao khả năng tổng hợp giọng nói với các mô hình lớn để có đầu ra giọng nói tự nhiên và truyền cảm hơn
+- [ ] Kết hợp các hiệu ứng chuyển tiếp video để đảm bảo trải nghiệm xem mượt mà hơn
+- [ ] Cải thiện mức độ liên quan của nội dung video
+- [ ] Thêm tùy chọn cho độ dài video: ngắn, trung bình, dài
+- [ ] Đóng gói ứng dụng thành một gói khởi chạy một cú nhấp chuột cho Windows và macOS để dễ sử dụng
+- [ ] Cho phép sử dụng các tài liệu tùy chỉnh
+- [ ] Cung cấp các tùy chọn lồng tiếng và nhạc nền với bản xem trước theo thời gian thực
+- [ ] Hỗ trợ nhiều nhà cung cấp tổng hợp giọng nói hơn, chẳng hạn như OpenAI TTS, Azure TTS
+- [ ] Tự động hóa quy trình tải lên nền tảng TikTok
 
 ## Video Demos 📺
 
-### Portrait 9:16
+### Chân dung 9:16
 
 <table>
 <thead>
@@ -70,7 +67,7 @@ materials, video subtitles, and video background music before synthesizing a hig
 </tbody>
 </table>
 
-### Landscape 16:9
+### Phong cảnh 16:9
 
 <table>
 <thead>
@@ -87,37 +84,37 @@ materials, video subtitles, and video background music before synthesizing a hig
 </tbody>
 </table>
 
-## System Requirements 📦
+## Yêu cầu hệ thống 📦
 
-- Recommended minimum 4 CPU cores or more, 8G of memory or more, GPU is not required
-- Windows 10 or MacOS 11.0, and their later versions
+- Khuyến nghị tối thiểu 4 nhân CPU trở lên, bộ nhớ 8G trở lên, không yêu cầu GPU
+- Windows 10 hoặc MacOS 11.0 và các phiên bản mới hơn
 
-## Installation & Deployment 📥
-- Ensure your **network** is stable, meaning you can access foreign websites normally
+## Cài đặt & Triển khai 📥
+- Đảm bảo **mạng** của bạn ổn định
 
-#### ① Clone the Project
+#### ① Clone dự án
 
 ```shell
 git clone https://github.com/thanhdinhbao/MIT-Project.git
 ```
 
-#### ② Modify the Configuration File
+#### ② Sửa đổi tập tin cấu hình
 
-- Copy the `config.example.toml` file and rename it to `config.toml`
-- Follow the instructions in the `config.toml` file to configure `pexels_api_keys` and `llm_provider`, and according to
-  the llm_provider's service provider, set up the corresponding API Key
+- Sao chép tệp `config.example.toml` và đổi tên thành `config.toml`
+- Làm theo hướng dẫn trong tệp `config.toml` để cấu hình `pexels_api_keys` và `llm_provider`, và theo
+nhà cung cấp dịch vụ llm_provider, hãy thiết lập Khóa API tương ứng
 
-#### ③ Configure Large Language Models (LLM)
+#### ③ Cấu hình Large Language Models (LLM)
 
-- To use `GPT-4.0` or `GPT-3.5`, you need an `API Key` from `OpenAI`. If you don't have one, you can set `llm_provider`
-  to `g4f` (a free-to-use GPT library https://github.com/xtekky/gpt4free)
+- Để sử dụng `GPT-4.0` hoặc `GPT-3.5`, bạn cần `API Key` từ `OpenAI`. Nếu bạn không có, bạn có thể đặt `llm_provider`
+thành `g4f` (thư viện GPT miễn phí https://github.com/xtekky/gpt4free)
 
 
-### Manual Deployment 📦
+### Triển khai thủ công 📦
 
-#### ① Create a Python Virtual Environment
+#### ① Tạo môi trường ảo Python
 
-It is recommended to create a Python virtual environment to avoid dependency conflicts.
+Nên tạo môi trường ảo Python để tránh xung đột phụ thuộc.
 
 ```bash
 # Clone the project
@@ -152,49 +149,48 @@ conda activate MIT-Project
 sh webui.sh
 ```
 
-After launching, the browser will open automatically
+Sau khi khởi chạy, trình duyệt sẽ tự động mở
 
-#### ② Access the Web Interface
+#### ② Truy cập giao diện web
 
-Open your browser and visit http://0.0.0.0:8501
+Mở trình duyệt của bạn và truy cập http://0.0.0.0:8501
 
-#### ③ Access the API Interface
+#### ③ Truy cập giao diện API
 
-Open your browser and visit http://0.0.0.0:8080/docs Or http://0.0.0.0:8080/redoc
+Mở trình duyệt của bạn và truy cập http://0.0.0.0:8080/docs Hoặc http://0.0.0.0:8080/redoc
 
-#### ④ Launch the API Service 🚀
+#### ④ Khởi chạy dịch vụ API 🚀
 
 ```shell
 python main.py
 ```
 
-After launching, you can view the `API documentation` at http://127.0.0.1:8080/docs and directly test the interface
-online for a quick experience.
+Sau khi khởi chạy, bạn có thể xem `Tài liệu API` tại http://127.0.0.1:8080/docs và trực tiếp kiểm tra giao diện
+trực tuyến để có trải nghiệm nhanh chóng.
+## Tạo phụ đề 📜
 
-## Subtitle Generation 📜
+Hiện tại, có 2 cách để tạo phụ đề:
 
-Currently, there are 2 ways to generate subtitles:
+- edge: Tốc độ tạo nhanh hơn, hiệu suất tốt hơn, không có yêu cầu cụ thể về cấu hình máy tính, nhưng
+chất lượng có thể không ổn định
+- whisper: Tốc độ tạo chậm hơn, hiệu suất kém hơn, yêu cầu cụ thể về cấu hình máy tính, nhưng
+chất lượng đáng tin cậy hơn
 
-- edge: Faster generation speed, better performance, no specific requirements for computer configuration, but the
-  quality may be unstable
-- whisper: Slower generation speed, poorer performance, specific requirements for computer configuration, but more
-  reliable quality
+Bạn có thể chuyển đổi giữa chúng bằng cách sửa đổi `subtitle_provider` trong tệp cấu hình `config.toml`
 
-You can switch between them by modifying the `subtitle_provider` in the `config.toml` configuration file
-
-It is recommended to use `edge` mode, and switch to `whisper` mode if the quality of the subtitles generated is not
-satisfactory.
+Bạn nên sử dụng chế độ `edge` và chuyển sang chế độ `whisper` nếu chất lượng phụ đề được tạo không
+đạt yêu cầu.
 
 > Note:
-> If left blank, it means no subtitles will be generated.
+> Nếu để trống, điều đó có nghĩa là sẽ không có phụ đề nào được tạo ra.
 
-**Download whisper**
-- Please ensure a good internet connectivity
-- `whisper` model can be downloaded from HuggingFace: https://huggingface.co/openai/whisper-large-v3/tree/main
+**Tải whisper**
+- Hãy đảm bảo kết nối internet tốt
+- Có thể tải mô hình `whisper` từ HuggingFace: https://huggingface.co/openai/whisper-large-v3/tree/main
 
-After downloading the model to local machine, copy the whole folder and put it into the following path: `.\MIT-Project\models`
+Sau khi tải mô hình xuống máy cục bộ, hãy sao chép toàn bộ thư mục và đặt vào đường dẫn sau: `.\MIT-Project\models`
 
-This is what the final path should look like: `.\MIT-Project\models\whisper-large-v3`
+Đường dẫn cuối cùng sẽ trông như thế này: `.\MIT-Project\models\whisper-large-v3`
 
 ```
 MIT-Project  
@@ -207,49 +203,48 @@ MIT-Project
   │          vocabulary.json
 ```
 
-## Background Music 🎵
+## Nhạc nền 🎵
 
-Background music for videos is located in the project's `resource/songs` directory.
-> The current project includes some default music from YouTube videos. If there are copyright issues, please delete
-> them.
+Nhạc nền cho video nằm trong thư mục `resource/songs` của dự án.
+> Dự án hiện tại bao gồm một số nhạc mặc định từ video YouTube. Nếu có vấn đề về bản quyền, vui lòng xóa
+> chúng.
 
-## Subtitle Fonts 🅰
+## Phông chữ phụ đề 🅰
 
-Fonts for rendering video subtitles are located in the project's `resource/fonts` directory, and you can also add your
-own fonts.
+Phông chữ để hiển thị phụ đề video nằm trong thư mục `resource/fonts` của dự án và bạn cũng có thể thêm phông chữ của riêng mình.
 
-## Common Questions 🤔
+## Câu hỏi thường gặp 🤔
 
-### ❓How to Use the Free OpenAI GPT-3.5 Model?
+### ❓Làm thế nào để sử dụng mô hình OpenAI GPT-3.5 miễn phí?
 
-[OpenAI has announced that ChatGPT with 3.5 is now free](https://openai.com/blog/start-using-chatgpt-instantly), and
-developers have wrapped it into an API for direct usage.
+[OpenAI đã thông báo rằng ChatGPT với 3.5 hiện đã miễn phí](https://openai.com/blog/start-using-chatgpt-instantly), và
+các nhà phát triển đã gói nó vào một API để sử dụng trực tiếp.
 
-**Ensure you have Docker installed and running**. Execute the following command to start the Docker service:
+**Đảm bảo bạn đã cài đặt và chạy Docker**. Thực hiện lệnh sau để khởi động dịch vụ Docker:
 
 ```shell
 docker run -p 3040:3040 missuo/freegpt35
 ```
 
-Once successfully started, modify the `config.toml` configuration as follows:
+Sau khi khởi động thành công, hãy sửa đổi cấu hình `config.toml` như sau:
 
-- Set `llm_provider` to `openai`
-- Fill in `openai_api_key` with any value, for example, '123456'
-- Change `openai_base_url` to `http://localhost:3040/v1/`
-- Set `openai_model_name` to `gpt-3.5-turbo`
+- Đặt `llm_provider` thành `openai`
+- Điền bất kỳ giá trị nào vào `openai_api_key`, ví dụ: '123456'
+- Đổi `openai_base_url` thành `http://localhost:3040/v1/`
+- Đặt `openai_model_name` thành `gpt-3.5-turbo`
 
-### ❓RuntimeError: No ffmpeg exe could be found
+### ❓RuntimeError: Không tìm thấy ffmpeg exe
 
-Normally, ffmpeg will be automatically downloaded and detected.
-However, if your environment has issues preventing automatic downloads, you may encounter the following error:
+Thông thường, ffmpeg sẽ được tự động tải xuống và phát hiện. 
+Tuy nhiên, nếu môi trường của bạn có vấn đề ngăn chặn việc tải xuống tự động, bạn có thể gặp phải lỗi sau:
 
 ```
 RuntimeError: No ffmpeg exe could be found.
 Install ffmpeg on your system, or set the IMAGEIO_FFMPEG_EXE environment variable.
 ```
 
-In this case, you can download ffmpeg from https://www.gyan.dev/ffmpeg/builds/, unzip it, and set `ffmpeg_path` to your
-actual installation path.
+Trong trường hợp này, bạn có thể tải xuống ffmpeg từ https://www.gyan.dev/ffmpeg/builds/, giải nén và đặt `ffmpeg_path` thành
+đường dẫn cài đặt thực tế của bạn.
 
 ```toml
 [app]

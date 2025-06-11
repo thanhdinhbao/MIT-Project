@@ -84,8 +84,8 @@ def generate_audio(task_id, params, video_script):
         sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
         logger.error(
             """failed to generate audio:
-                1. check if the language of the voice matches the language of the video script.
-                2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.
+1. check if the language of the voice matches the language of the video script.
+2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.
         """.strip()
         )
         return None, None, None
@@ -292,11 +292,6 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
         task_id, params, video_script, sub_maker, audio_file
     )
 
-    if not os.path.exists(subtitle_path):
-        logger.error(f"Subtitle file not found: {subtitle_path}")
-        task_dir_contents = os.listdir(utils.task_dir(task_id))
-        logger.error(f"Task directory contents: {task_dir_contents}")
-
     if stop_at == "subtitle":
         sm.state.update_task(
             task_id,
@@ -360,7 +355,7 @@ if __name__ == "__main__":
     task_id = "task_id"
     params = VideoParams(
         video_subject="Technology",
-        voice_name="en-US-Wavenet-D",
+        voice_name="zh-CN-XiaoyiNeural-Female",
         voice_rate=1.0,
     )
     start(task_id, params, stop_at="video")

@@ -34,6 +34,9 @@ from app.services.utils import video_effects
 from app.utils import utils
 from app.config import config
 
+
+
+
 def get_bgm_file(bgm_type: str = "random", bgm_file: str = ""):
     if not bgm_type:
         return ""
@@ -421,6 +424,7 @@ def combine_videos(
     video_clip = processed_clips
     video_clip = video_clip.with_fps(30)
     logger.info("writing video file...")
+    # https://github.com/harry0703/MoneyPrinterTurbo/issues/111#issuecomment-2032354030
     try:
         # Log memory usage and video clip info
         logger.info(f"Memory usage before writing: {psutil.Process().memory_info().rss / 1024 / 1024:.2f} MB")
@@ -546,6 +550,9 @@ def generate_video(
     logger.info(f"  ③ subtitle: {subtitle_path}")
     logger.info(f"  ④ output: {output_file}")
 
+    # https://github.com/harry0703/MoneyPrinterTurbo/issues/217
+    # PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'final-1.mp4.tempTEMP_MPY_wvf_snd.mp3'
+    # write into the same directory as the output file
     output_dir = os.path.dirname(output_file)
 
     font_path = ""
@@ -636,11 +643,7 @@ def generate_video(
         sub = SubtitlesClip(
             subtitles=subtitle_path, encoding="utf-8", make_textclip=make_textclip
         )
-        text_clips = []
-        for item in sub.subtitles:
-            clip = create_text_clip(item)
-            text_clips.append(clip)
-        video_clip = CompositeVideoClip([video_clip, *text_clips])
+        video_clip = CompositeVideoClip([video_clip, sub])
 
     bgm_file = get_bgm_file(bgm_type=params.bgm_type, bgm_file=params.bgm_file)
     if bgm_file:
@@ -778,11 +781,3 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4):
     finally:
         kill_ffmpeg_processes()
     return materials
-
-
-if __name__ == "__main__":
-    m = MaterialInfo()
-    m.url = "/Users/thanh/Downloads/IMG_2915.JPG"
-    m.provider = "local"
-    materials = preprocess_video([m], clip_duration=4)
-    print(materials)

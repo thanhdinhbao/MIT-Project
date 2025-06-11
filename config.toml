@@ -36,9 +36,9 @@ redis_db = 0
 redis_password = ""
 max_concurrent_tasks = 5
 hide_config = false
-ffmpeg_ram_limit = 8.0
-max_ffmpeg_processes = 5
-ffmpeg_threads_per_process = 4
+ffmpeg_ram_limit = 7.0
+max_ffmpeg_processes = 3
+ffmpeg_threads_per_process = 2
 tts_provider = "openai fm"
 openai_fm_tone = "Calm, encouraging, and articulate"
 
@@ -59,7 +59,7 @@ hide_log = false
 voice_name = "openai_fm-onyx-Unisex"
 font_name = "MicrosoftYaHeiBold.ttc"
 text_fore_color = "#FFFFFF"
-font_size = 60
+font_size = 59
 
 [google_drive]
 credentials_file = "credentials.json"
