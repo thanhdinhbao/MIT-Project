@@ -7,11 +7,11 @@ tài liệu video, phụ đề video và nhạc nền video trước khi tổng 
 
 ### WebUI
 
-![](docs/webui-en.jpg)
+![](docs/main-page.png)
 
 ### API Interface
 
-![](docs/api.jpg)
+![](docs/api-page.png)
 
 </div>
 
