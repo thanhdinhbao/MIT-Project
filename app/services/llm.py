@@ -336,7 +336,7 @@ For AI voiceover use, write in short, punchy sentences for easy voice sync.
                 logging.error("gpt returned an empty response")
 
             # g4f may return an error message
-            if final_script and "当日额度已消耗完" in final_script:
+            if final_script and "The quota for the day has been consumed" in final_script:
                 raise ValueError(final_script)
 
             if final_script:

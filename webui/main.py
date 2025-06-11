@@ -1,10 +1,25 @@
+import streamlit as st
+st.set_page_config(
+    page_title="MIT-Project",
+    page_icon="🎬",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        "Report a bug": "https://github.com/thanhdinhbao",
+        "About": "# MIT-Project\nSimply provide a topic or keyword for a video, and it will "
+        "automatically generate the video copy, video materials, video subtitles, "
+        "and video background music before synthesizing a high-definition short "
+        "video.\n\nhttps://github.com/thanhdinhbao/MIT-Project",
+    },
+)
+
 import os
 import os
 import platform
 import sys
 from uuid import uuid4
 
-import streamlit as st
+
 from loguru import logger
 from ffmpeg_settings import add_ffmpeg_settings_to_ui
 
@@ -26,21 +41,8 @@ from app.models.schema import (
 )
 from app.services import llm, voice
 from app.services import task as tm
+from app.utils.gdrive_ui import upload_and_show
 from app.utils import utils
-
-st.set_page_config(
-    page_title="MIT-Project",
-    page_icon="🎬",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        "Report a bug": "https://github.com/thanhdinhbao",
-        "About": "# MIT-Project\nSimply provide a topic or keyword for a video, and it will "
-        "automatically generate the video copy, video materials, video subtitles, "
-        "and video background music before synthesizing a high-definition short "
-        "video.\n\nhttps://github.com/thanhdinhbao/MIT-Project",
-    },
-)
 
 
 hide_streamlit_style = """
@@ -95,7 +97,6 @@ def open_task_folder(task_id):
         path = os.path.join(root_dir, "storage", "tasks", task_id)
         if os.path.exists(path):
             if sys == "Windows":
-                # Use quotes around the path to handle spaces
                 os.system(f'start "" "{path}"')
             if sys == "Darwin":
                 os.system(f'open "{path}"')
@@ -189,14 +190,6 @@ if not config.app.get("hide_config", False):
             config.ui["hide_log"] = hide_log
 
         with middle_config_panel:
-            #   openai
-            #   moonshot 
-            #   oneapi
-            #   g4f
-            #   azure
-            #   qwen 
-            #   gemini
-            #   ollama
             llm_providers = [
                 "OpenAI",
                 "Moonshot",
@@ -275,10 +268,10 @@ if not config.app.get("hide_config", False):
                     )
                 with llm_helper:
                     tips = """
-                        ##### OneAPI 配置说明
-                        - **API Key**: 填写您的 OneAPI 密钥
-                        - **Base Url**: 填写 OneAPI 的基础 URL
-                        - **Model Name**: 填写您要使用的模型名称，例如 claude-3-5-sonnet-20240620
+                        ##### Cấu hình OneAPI
+                        - **API Key**: Key OneAPI của bạn, [nhấn vào đây để lấy](https://console.oneapi.ai/api-keys)
+                        - **Base Url**: URL cơ sở của OneAPI, để trống
+                        - **Model Name**: Tên mô hình bạn muốn sử dụng, ví dụ: claude-3-5-sonnet-20240620
                         """
 
             if llm_provider == "qwen":
@@ -286,10 +279,10 @@ if not config.app.get("hide_config", False):
                     llm_model_name = "qwen-max"
                 with llm_helper:
                     tips = """
-                           ##### 通义千问Qwen 配置说明
-                           - **API Key**: [点击到官网申请](https://dashscope.console.aliyun.com/apiKey)
-                           - **Base Url**: 留空
-                           - **Model Name**: 比如 qwen-max，[点击查看模型列表](https://help.aliyun.com/zh/dashscope/developer-reference/model-introduction#3ef6d0bcf91wy)
+                           ##### Cấu hình Qwen 
+                           - **API Key**: [Nhấp để đăng ký trên trang web chính thức](https://dashscope.console.aliyun.com/apiKey)
+                           - **Base Url**: Để trống
+                           - **Model Name**: Điền tên mô hình bạn muốn sử dụng, ví dụ: qwen-max
                            """
 
             if llm_provider == "g4f":
@@ -297,20 +290,20 @@ if not config.app.get("hide_config", False):
                     llm_model_name = "gpt-3.5-turbo"
                 with llm_helper:
                     tips = """
-                           ##### gpt4free 配置说明
-                           > [GitHub开源项目](https://github.com/xtekky/gpt4free)，可以免费使用GPT模型，但是**稳定性较差**
-                           - **API Key**: 随便填写，比如 123
-                           - **Base Url**: 留空
-                           - **Model Name**: 比如 gpt-3.5-turbo，[点击查看模型列表](https://github.com/xtekky/gpt4free/blob/main/g4f/models.py#L308)
+                           ##### Cấu hình gpt4free
+                           > [GitHub](https://github.com/xtekky/gpt4free)
+                           - **API Key**: Điền mã API của bạn, nếu không có thì để trống
+                           - **Base Url**: Để trống
+                           - **Model Name**: Điền tên mô hình bạn muốn sử dụng, ví dụ: gpt-3.5-turbo
                            """
             if llm_provider == "azure":
                 with llm_helper:
                     tips = """
-                           ##### Azure 配置说明
-                           > [点击查看如何部署模型](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/how-to/create-resource)
-                           - **API Key**: [点击到Azure后台创建](https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/OpenAI)
-                           - **Base Url**: 留空
-                           - **Model Name**: 填写你实际的部署名
+                           ##### Cấu hình Azure
+                           > [Hướng dẫn](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/how-to/create-resource)
+                           - **API Key**: [Links](https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/OpenAI)
+                           - **Base Url**: Để trống
+                           - **Model Name**: Điền tên mô hình bạn muốn sử dụng, ví dụ: gpt-35-turbo
                            """
 
             if llm_provider == "gemini":
@@ -319,11 +312,11 @@ if not config.app.get("hide_config", False):
 
                 with llm_helper:
                     tips = """
-                            ##### Gemini 配置说明
-                            > 需要VPN开启全局流量模式
-                           - **API Key**: [点击到官网申请](https://ai.google.dev/)
-                           - **Base Url**: 留空
-                           - **Model Name**: 比如 gemini-1.0-pro
+                            ##### Cấu hình Gemini
+                            
+                           - **API Key**: [Links](https://ai.google.dev/)
+                           - **Base Url**: Để trống
+                           - **Model Name**: Điền tên mô hình bạn muốn sử dụng, ví dụ: gemini-1.0-pro
                            """
 
             if llm_provider == "deepseek":
@@ -333,24 +326,15 @@ if not config.app.get("hide_config", False):
                     llm_base_url = "https://api.deepseek.com"
                 with llm_helper:
                     tips = """
-                           ##### DeepSeek 配置说明
-                           - **API Key**: [点击到官网申请](https://platform.deepseek.com/api_keys)
-                           - **Base Url**: 固定为 https://api.deepseek.com
-                           - **Model Name**: 固定为 deepseek-chat
-                           """
-
-            if llm_provider == "ernie":
-                with llm_helper:
-                    tips = """
-                           ##### 百度文心一言 配置说明
-                           - **API Key**: [点击到官网申请](https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application)
-                           - **Secret Key**: [点击到官网申请](https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application)
-                           - **Base Url**: 填写 **请求地址** [点击查看文档](https://cloud.baidu.com/doc/WENXINWORKSHOP/s/jlil56u11#%E8%AF%B7%E6%B1%82%E8%AF%B4%E6%98%8E)
+                           ##### Cấu hình DeepSeek
+                           - **API Key**: [Links](https://platform.deepseek.com/api_keys)
+                           - **Base Url**: Sử dụng địa chỉ API của DeepSeek, ví dụ: https://api.deepseek.com
+                           - **Model Name**: Điền tên mô hình bạn muốn sử dụng, ví dụ: deepseek-chat
                            """
 
             if tips and config.ui["language"] == "zh":
                 st.warning(
-                    "中国用户建议使用 **DeepSeek** 或 **Moonshot** 作为大模型提供商\n- 国内可直接访问，不需要VPN \n- 注册就送额度，基本够用"
+                    "Khuyến nghị nên dùng Gemini vì nó free =))"
                 )
                 st.info(tips)
 
@@ -942,13 +926,12 @@ if start_button:
 
     video_files = result.get("videos", [])
     st.success(tr("Video Generation Completed"))
-    try:
-        if video_files:
-            player_cols = st.columns(len(video_files) * 2 + 1)
-            for i, url in enumerate(video_files):
-                player_cols[i * 2 + 1].video(url)
-    except Exception:
-        pass
+    if video_files:
+        for i, url in enumerate(video_files):
+            with st.container():
+                st.video(url)
+                if st.button("Upload lên Drive", key=f"upload_{i}"):
+                    upload_and_show(url)
 
     open_task_folder(task_id)
     logger.info(tr("Video Generation Completed"))

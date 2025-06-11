@@ -292,6 +292,11 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
         task_id, params, video_script, sub_maker, audio_file
     )
 
+    if not os.path.exists(subtitle_path):
+        logger.error(f"Subtitle file not found: {subtitle_path}")
+        task_dir_contents = os.listdir(utils.task_dir(task_id))
+        logger.error(f"Task directory contents: {task_dir_contents}")
+
     if stop_at == "subtitle":
         sm.state.update_task(
             task_id,

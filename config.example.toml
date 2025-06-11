@@ -63,7 +63,13 @@
     azure_api_key = ""
     azure_base_url=""
     azure_model_name="gpt-35-turbo" # replace with your model deployment name
-    azure_api_version = "2024-02-15-preview"
+azure_api_version = "2024-02-15-preview"
+
+# Google Drive OAuth2 configuration
+[google_drive]
+credentials_file = ""
+token_file = "token.json"
+folder_id = ""
 
     ########## Gemini API Key
     gemini_api_key=""
@@ -103,7 +109,6 @@
     #
     #   RuntimeError: No ffmpeg exe could be found.
     #   Install ffmpeg on your system, or set the IMAGEIO_FFMPEG_EXE environment variable.
-    # 此时你可以手动下载 ffmpeg 并设置 ffmpeg_path，下载地址：https://www.gyan.dev/ffmpeg/builds/
 
     # Under normal circumstances, ffmpeg is downloaded automatically and detected automatically.
     # However, if there is an issue with your environment that prevents automatic downloading, you might encounter the following error:
@@ -131,9 +136,9 @@
     # material_directory = "task"                # Indicates that video materials will be downloaded to the current task's folder, this method does not allow sharing of already downloaded video materials
 
     # 视频素材存放位置
-    # material_directory = ""                    #表示将视频素材下载到默认的文件夹，默认文件夹为当前项目下的 ./storage/cache_videos
-    # material_directory = "/user/thanh/videos"  #表示将视频素材下载到指定的文件夹中
-    # material_directory = "task"                #表示将视频素材下载到当前任务的文件夹中，这种方式无法共享已经下载的视频素材
+    # material_directory = ""                    
+    # material_directory = "/user/thanh/videos"  
+    # material_directory = "task"                
 
     material_directory = ""
 

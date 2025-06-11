@@ -34,9 +34,6 @@ from app.services.utils import video_effects
 from app.utils import utils
 from app.config import config
 
-
-
-
 def get_bgm_file(bgm_type: str = "random", bgm_file: str = ""):
     if not bgm_type:
         return ""
@@ -641,7 +638,7 @@ def generate_video(
         )
         text_clips = []
         for item in sub.subtitles:
-            clip = create_text_clip(subtitle_item=item)
+            clip = create_text_clip(item)
             text_clips.append(clip)
         video_clip = CompositeVideoClip([video_clip, *text_clips])
 
@@ -789,5 +786,3 @@ if __name__ == "__main__":
     m.provider = "local"
     materials = preprocess_video([m], clip_duration=4)
     print(materials)
-
-   

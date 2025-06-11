@@ -3,7 +3,6 @@ import sys
 import streamlit as st
 import psutil
 
-# Add the root directory of the project to the system path to allow importing modules from the project
 root_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 if root_dir not in sys.path:
     sys.path.append(root_dir)
@@ -66,14 +65,11 @@ def add_ffmpeg_settings_to_ui():
     )
     config.app["ffmpeg_threads_per_process"] = threads_per_process
 
-    # Recalculate RAM usage per process based on selected threads
     ram_per_process_mb = 400 + (threads_per_process * 200)  # Base 400MB + 200MB per thread
 
-    # Display estimated RAM usage
     estimated_ram = (max_ffmpeg_processes * ram_per_process_mb) / 1024  # in GB
     st.info(f"Estimated maximum RAM usage: {estimated_ram:.2f} GB")
 
-    # Warning if estimated RAM usage is too high
     if estimated_ram > ram_limit:
         st.warning(f"⚠️ Estimated RAM usage ({estimated_ram:.2f} GB) exceeds your RAM limit ({ram_limit:.2f} GB). Consider reducing the number of processes or threads.")
 
@@ -84,7 +80,6 @@ def add_ffmpeg_settings_to_ui():
         "threads_per_process": threads_per_process
     }
 
-# This function can be used to get the ffmpeg settings from config
 def get_ffmpeg_settings():
     return {
         "ffmpeg_path": config.app.get("ffmpeg_path", ""),
